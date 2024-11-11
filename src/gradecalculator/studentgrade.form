@@ -32,11 +32,6 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="Grade" min="-2" pref="93" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-                              <Component id="gGrade" min="-2" pref="141" max="-2" attributes="0"/>
-                          </Group>
                           <Component id="Name" alignment="0" min="-2" pref="73" max="-2" attributes="0"/>
                           <Component id="StudentNumber" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -55,10 +50,8 @@
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="sNumber" alignment="0" pref="147" max="32767" attributes="0"/>
                                       <Component id="nName" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="pPercentage" alignment="0" pref="143" max="32767" attributes="0"/>
-                                          <Component id="tMarks" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="pPercentage" alignment="0" pref="147" max="32767" attributes="0"/>
+                                      <Component id="tMarks" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="cCalculate" min="-2" pref="155" max="-2" attributes="0"/>
                               </Group>
@@ -80,6 +73,18 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="mMaths" min="-2" pref="143" max="-2" attributes="0"/>
                                   <Component id="aAfrikaans" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="Remarks" min="-2" pref="104" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="RemarksL" min="-2" pref="141" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="Grade" min="-2" pref="93" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                                  <Component id="gGrade" min="-2" pref="141" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -150,8 +155,19 @@
                   <Component id="gGrade" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="rReset" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="rReset" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Remarks" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RemarksL" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -290,6 +306,16 @@
     <Component class="javax.swing.JTextField" name="pPercentage">
     </Component>
     <Component class="javax.swing.JTextField" name="gGrade">
+    </Component>
+    <Component class="javax.swing.JTextField" name="RemarksL">
+    </Component>
+    <Component class="javax.swing.JLabel" name="Remarks">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial Black" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Remarks:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

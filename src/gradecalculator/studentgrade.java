@@ -48,6 +48,8 @@ public class studentgrade extends javax.swing.JFrame {
         tMarks = new javax.swing.JTextField();
         pPercentage = new javax.swing.JTextField();
         gGrade = new javax.swing.JTextField();
+        RemarksL = new javax.swing.JTextField();
+        Remarks = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,6 +109,9 @@ public class studentgrade extends javax.swing.JFrame {
             }
         });
 
+        Remarks.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        Remarks.setText("Remarks:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,10 +124,6 @@ public class studentgrade extends javax.swing.JFrame {
                         .addComponent(mStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Grade, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(108, 108, 108)
-                                .addComponent(gGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(StudentNumber)
                             .addGroup(layout.createSequentialGroup()
@@ -138,9 +139,8 @@ public class studentgrade extends javax.swing.JFrame {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(sNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                                         .addComponent(nName)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(pPercentage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-                                            .addComponent(tMarks, javax.swing.GroupLayout.Alignment.LEADING)))
+                                        .addComponent(pPercentage, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                                        .addComponent(tMarks))
                                     .addComponent(cCalculate, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(pSciences, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -155,7 +155,16 @@ public class studentgrade extends javax.swing.JFrame {
                                 .addGap(65, 65, 65)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(mMaths, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(aAfrikaans, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(aAfrikaans, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(Remarks, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(RemarksL, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(Grade, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(108, 108, 108)
+                                    .addComponent(gGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(183, 183, 183))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -209,8 +218,15 @@ public class studentgrade extends javax.swing.JFrame {
                     .addComponent(Grade)
                     .addComponent(gGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rReset)
-                .addGap(32, 32, 32))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(rReset)
+                        .addGap(32, 32, 32))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Remarks)
+                            .addComponent(RemarksL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(17, 17, 17))))
         );
 
         pack();
@@ -238,21 +254,27 @@ public class studentgrade extends javax.swing.JFrame {
             
             if (per > 90) {
                 grade = "A";
+               RemarksL.setText("Amazing");
             }
             else if (per >=80) {
                 grade = "B";
+                RemarksL.setText("Great");
             }
             else if (per >=70){
                 grade = "C";
+                RemarksL.setText("Good");
             }
             else if (per >=60){
                 grade = "D";
+                RemarksL.setText("Okay");
             }
             else if (per >= 50){
                 grade = "E";
+                RemarksL.setText("Moderate");
             }
             else{
                 grade = "Poor";
+                RemarksL.setText("You have failed");
             }
             gGrade.setText(" " + grade);
             tMarks.setText(" " + total);
@@ -330,6 +352,8 @@ public class studentgrade extends javax.swing.JFrame {
     private javax.swing.JLabel Name;
     private javax.swing.JLabel Percentage;
     private javax.swing.JLabel PhysicalSciences;
+    private javax.swing.JLabel Remarks;
+    private javax.swing.JTextField RemarksL;
     private javax.swing.JLabel StudentNumber;
     private javax.swing.JLabel SubjectModules;
     private javax.swing.JLabel TotalMarks;
